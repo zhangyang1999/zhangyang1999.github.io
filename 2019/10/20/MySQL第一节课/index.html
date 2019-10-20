@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | Hexo</title>
+  <title>MySQL第一节课总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+  <meta name="description" content="一、数据库的分类       关系型数据库          sqlserver mysql orcale       非关系型数据库nosql          redis   关系型数据库   二、什么是数据库       用来存储数据的仓库，数据库由一张一张的表       组成，真正存储数据的地方为表   三、什么是表       表由行和列组成       行在数据库里称为记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL第一节课总结">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/MySQL第一节课/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、数据库的分类       关系型数据库          sqlserver mysql orcale       非关系型数据库nosql          redis   关系型数据库   二、什么是数据库       用来存储数据的仓库，数据库由一张一张的表       组成，真正存储数据的地方为表   三、什么是表       表由行和列组成       行在数据库里称为记录">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-20T14:05:58.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="MySQL第一节课总结">
+<meta name="twitter:description" content="一、数据库的分类       关系型数据库          sqlserver mysql orcale       非关系型数据库nosql          redis   关系型数据库   二、什么是数据库       用来存储数据的仓库，数据库由一张一张的表       组成，真正存储数据的地方为表   三、什么是表       表由行和列组成       行在数据库里称为记录">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,103 +154,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MySQL第一节课" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MySQL第一节课总结
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/20/MySQL第一节课/" class="archive-article-date">
+
+        
+        <a href="/2019/10/20/MySQL第一节课/" class="archive-article-date">
   	<time datetime="2019-10-20T13:35:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/20/MySQL第一节课/">MySQL第一节课总结</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>   一、数据库的分类<br>       关系型数据库<br>          sqlserver mysql orcale<br>       非关系型数据库nosql<br>          redis<br>   关系型数据库<br>   二、什么是数据库<br>       用来存储数据的仓库，数据库由一张一张的表<br>       组成，真正存储数据的地方为表<br>   三、什么是表<br>       表由行和列组成<br>       行在数据库里称为记录<br>       列称为字段或属性<br>       例如：学生表，表里应该有，学生的学号，<br>       姓名，身份证号，年纪。那么这些就称为<br>       表的字段。<br>    关系型数据库，是由一张一张有关系的表的<br>    组成的<br> 四、安装Mysql<br>    先安装Mysql服务器<br>        数据库是创建的在服务器上的<br>    再安装Mysql客户端<br>        用于连接上mysql服务器，进而对<br>        mysql服务器进行操作，比较常用<br>        客户端有navicat sqlyog<br> 五、sql语句的学习<br>    1、创建语句<br>        1.1、创建数据库<br>             create database 库名;<br>        1.2、创建表<br>             create table 表名(<br>                字段名1 数据类型 约束,<br>                字段名2 数据类型 约束,<br>                字段名3 数据类型<br>             )<br>       数据类型：<br>       常用的数据类型<br>          int 整型数据，占四个字节大小<br>          char 字符串数据，需要设置占用的<br>               字节个数，是一个固定长度的<br>               数据类型<br>          varchar字符串数据，需要设置占用<br>             的字节个数，是一个可变长度的<br>             数据类型<br>             可变长度的意思是：内容是多少<br>               就占占多少个字节，而不是占<br>               用自己设置的字节个数<br>          float 小数<br>    2、插入语句<br>        insert into 表名(字段名1,字段名2)<br>          values(数据1,数据2)<br>    3、查询语句<br>         select 字段名1,字段名2… from<br>         表名<br>    4、删除语句<br>           删除库<br>             drop database 库名;<br>           删除表<br>             drop table 表名;<br>           删除表中所有的数据<br>             delete from 表名;<br>           删除表中的某些数据<br>             delete from 表名 where …<br>    六、约束<br>         主键约束（primary key）<br>        主键：一行记录唯一标识<br>        非空，不允许重复<br>         非空约束（not null）<br>         唯一约束（unique）<br>         不允许重复，可为null，但null也不允许重复<br>         默认值（default）<br>         check约束<br>         外键约束（foreign key）<br>        外键：本张表中的，一个字段的数据，引用另外一张表主键的数据。<br>        那么此字段，就称为本张表的外键<br>        例如：成绩表与学生信息表两张表都会用到学生学号，<br>        并且学号是学生信息表的主键。但成绩表的学号引用的<br>        学生信息表中的学号。那么学号在成绩表中就称为外键<br>    七、修改语句<br>    1、update 表名 set…where<br>    2、修改表的定义的语句<br>    #修改表的名字<br>    alter table 旧表名 rename新表名<br>    #修改数据类型<br>    alter table 表名 modify 列名 数据类型<br>    #修改列名<br>    alter table 表名 change 旧列名 新列名<br>    #删除列<br>    alter table 表名 drop 列名<br>    #添加列<br>    alter table 表名 add 新列名 数据类型</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/20/MySQL第一节课/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/11/web前端基础第一章/" class="archive-article-date">
-  	<time datetime="2019-10-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/11/web前端基础第一章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web前端基础第一章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/11/web前端基础第一章/">web前端基础第一章</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/11/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T16:26:24.772Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/11/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +326,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JdbcUtil类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/24/JdbcUtil类/">JdbcUtil类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/24/JdbcUtil类/" class="archive-article-date">
+  	<time datetime="2019-10-24T08:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>package com.dzqc.jdbcStu;</p>
+<p>import java.sql.Connection;<br>import java.sql.DriverManager;<br>import java.sql.ResultSet;<br>import java.sql.SQLException;<br>import java.sql.Statement;</p>
+<p>public class JdbcUtil {<br>    static String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>    static String username=”root”;<br>    static String password=”zy19991030”;<br>    static Statement st = null;<br>    static Connection conn = null;<br>    //结果集<br>    ResultSet rs = null;<br>    /**<br>     * 连接数据库服务器<br>     * @return 连接对象<br>     <em>/<br>    public static Connection getConnection(){<br>        //1、加载驱动<br>        try {<br>            Class.forName(“com.mysql.jdbc.Driver”);<br>            //2、连接数据库服务器<br>             conn = DriverManager.getConnection(url,username,password);<br>        } catch (ClassNotFoundException e) {<br>            // TODO Auto-generated catch block<br>            e.printStackTrace();<br>        } catch (SQLException e) {<br>            // TODO Auto-generated catch block<br>            e.printStackTrace();<br>        }<br>        return conn;<br>    }<br>    /*</em><br>     * 释放资源<br>     * @param conn 连接对象<br>     * @param st 陈述对象<br>     * @param rs 结果集<br>     */<br>    public static void realse(Connection conn,Statement st,ResultSet rs){<br>        if(rs!=null){<br>            try {<br>                rs.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>        if(st!=null){<br>            try {<br>                st.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>        if(conn!=null){<br>            try {<br>                conn.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>    }<br>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/24/JdbcUtil类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL第三节课" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

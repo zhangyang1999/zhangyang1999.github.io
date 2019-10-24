@@ -152,6 +152,157 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JdbcStu类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/24/JdbcStu类/">JdbcStu类</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/24/JdbcStu类/" class="archive-article-date">
+  	<time datetime="2019-10-24T08:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>package com.dzqc.jdbcStu;</p>
+<p>import java.sql.Connection;<br>import java.sql.DriverManager;<br>import java.sql.PreparedStatement;<br>import java.sql.ResultSet;<br>import java.sql.SQLException;<br>import java.sql.Statement;<br>/**</p>
+<ul>
+<li>Jdbc讲解</li>
+<li>@author songxh</li>
+<li>/<br>/*</li>
+<li>Jdbc是一个中间件,通过Jdbc中间件，可以让java代码，访问数据库服务器</li>
+<li>注意：与Jdbc操作相关的一系列类，jdk中有的有，有的没有，没有的就需要导入jar包</li>
+<li>/<br>public class JdbcStu {<br>  static Statement st = null;<br>  static Connection conn = null;<br>  //PreparedStatement是Statement的子类，<br>  //由于PreparedStatement能对<br>  //sql语句进行预编译，提高了执行效率<br>  static PreparedStatement ps = null;<br>  //结果集<br>  static ResultSet rs = null;<br>  /**<ul>
+<li>@param args</li>
+<li>/<br>public static void main(String[] args) {<br>  //basicStu();<br>  //deleteStu();<br>  insertStu1();<br>  selectStu();<br>}<br>/**</li>
+<li>jdbc基本操作</li>
+<li>/<br>public static void basicStu() {<br>  String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>  String username=”root”;<br>  String password=”zy19991030”;<br>  Statement st = null;<br>  Connection conn = null;<br>  try {<pre><code>//1、加载驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+//2、连接数据库服务器
+ conn=DriverManager.getConnection(url,username,password);
+System.out.println(conn);
+//3、获得陈述对象
+ st = conn.createStatement();
+String sql=&quot;insert into course(cnam,tid) values(&apos;jspservlet&apos;,3)&quot;;
+//执行sql语句
+st.executeUpdate(sql);</code></pre>  } catch (Exception e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>if(st!=null){
+    try {
+        st.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}</code></pre>  }<br>  if(conn!=null){<pre><code>try {
+    conn.close();
+} catch (SQLException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}</code></pre>  }<br>}<br>/**</li>
+<li>查询</li>
+<li>/<br>public static void selectStu(){<br>  String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>  String username=”root”;<br>  String password=”zy19991030”;<br>  Statement st = null;<br>  Connection conn = null;<br>  ResultSet rs = null;<br>  //结果集<br>  try {<pre><code>//1、加载驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+//2、连接数据库服务器
+ conn=DriverManager.getConnection(url,username,password);
+System.out.println(conn);
+//3、获得陈述对象
+ st = conn.createStatement();
+String sql=&quot;select coid,cnam,tid from course&quot;;
+//执行sql语句
+rs = st.executeQuery(sql);
+//处理结果集
+while(rs!=null&amp;&amp;rs.next()){
+    System.out.println(rs.getInt(&quot;coid&quot;)+&quot; &quot;+rs.getString(&quot;cnam&quot;)+&quot; &quot;+rs.getInt(&quot;tid&quot;));
+}</code></pre>  } catch (Exception e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>if(rs!=null){
+    try {
+        rs.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+if(st!=null){
+    try {
+        st.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+if(conn!=null){
+    try {
+        conn.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}</code></pre>  }<br>}<br>/**</li>
+<li>删除</li>
+<li>/<br>public static void deleteStu(){<br>  conn = JdbcUtil.getConnection();<br>  try {<pre><code>st = conn.createStatement();
+String sql=&quot;delete from course where coid=2&quot;;
+st.executeUpdate(sql);</code></pre>  } catch (SQLException e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>JdbcUtil.realse(conn, st, rs);</code></pre>  }<br>}<br>public static void insertStu1(){<br>  conn = JdbcUtil.getConnection();<br>  //由于要对sql语句进行预编译时，不能有具体的数据。先用？占住位置。<br>  //？就称为占位符<br>  String sql=”insert into course(cnam,tid) values(?,?)”;<br>  try {<pre><code>//创建陈述对象的同时完成对sql语句的编译
+ps = conn.prepareStatement(sql);
+//给？传值
+ps.setString(1,&quot;ssm框架&quot;);
+ps.setInt(2,3);
+//执行sql语句
+ps.executeUpdate();</code></pre>  } catch (SQLException e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>JdbcUtil.realse(conn, ps, rs);</code></pre>  }<br>}<br>}</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/24/JdbcStu类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JdbcUtil类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

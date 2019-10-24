@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JdbcUtil类 | Hexo</title>
+  <title>JdbcStu类 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement; public class JdbcUtil {    static S">
+  <meta name="description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.PreparedStatement;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement;/*">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JdbcUtil类">
-<meta property="og:url" content="http://yoursite.com/2019/10/24/JdbcUtil类/index.html">
+<meta property="og:title" content="JdbcStu类">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/JdbcStu类/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement; public class JdbcUtil {    static S">
+<meta property="og:description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.PreparedStatement;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement;/*">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-24T08:31:19.353Z">
+<meta property="og:updated_time" content="2019-10-24T08:39:08.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JdbcUtil类">
-<meta name="twitter:description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement; public class JdbcUtil {    static S">
+<meta name="twitter:title" content="JdbcStu类">
+<meta name="twitter:description" content="package com.dzqc.jdbcStu; import java.sql.Connection;import java.sql.DriverManager;import java.sql.PreparedStatement;import java.sql.ResultSet;import java.sql.SQLException;import java.sql.Statement;/*">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,20 +154,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JdbcUtil类" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JdbcStu类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JdbcUtil类
+      JdbcStu类
     </h1>
   
 
         
-        <a href="/2019/10/24/JdbcUtil类/" class="archive-article-date">
-  	<time datetime="2019-10-24T08:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
+        <a href="/2019/10/24/JdbcStu类/" class="archive-article-date">
+  	<time datetime="2019-10-24T08:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
 </a>
         
       </header>
@@ -175,8 +175,94 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>package com.dzqc.jdbcStu;</p>
-<p>import java.sql.Connection;<br>import java.sql.DriverManager;<br>import java.sql.ResultSet;<br>import java.sql.SQLException;<br>import java.sql.Statement;</p>
-<p>public class JdbcUtil {<br>    static String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>    static String username=”root”;<br>    static String password=”zy19991030”;<br>    static Statement st = null;<br>    static Connection conn = null;<br>    //结果集<br>    ResultSet rs = null;<br>    /**<br>     * 连接数据库服务器<br>     * @return 连接对象<br>     <em>/<br>    public static Connection getConnection(){<br>        //1、加载驱动<br>        try {<br>            Class.forName(“com.mysql.jdbc.Driver”);<br>            //2、连接数据库服务器<br>             conn = DriverManager.getConnection(url,username,password);<br>        } catch (ClassNotFoundException e) {<br>            // TODO Auto-generated catch block<br>            e.printStackTrace();<br>        } catch (SQLException e) {<br>            // TODO Auto-generated catch block<br>            e.printStackTrace();<br>        }<br>        return conn;<br>    }<br>    /*</em><br>     * 释放资源<br>     * @param conn 连接对象<br>     * @param st 陈述对象<br>     * @param rs 结果集<br>     */<br>    public static void realse(Connection conn,Statement st,ResultSet rs){<br>        if(rs!=null){<br>            try {<br>                rs.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>        if(st!=null){<br>            try {<br>                st.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>        if(conn!=null){<br>            try {<br>                conn.close();<br>            } catch (SQLException e) {<br>                // TODO Auto-generated catch block<br>                e.printStackTrace();<br>            }<br>        }<br>    }<br>}</p>
+<p>import java.sql.Connection;<br>import java.sql.DriverManager;<br>import java.sql.PreparedStatement;<br>import java.sql.ResultSet;<br>import java.sql.SQLException;<br>import java.sql.Statement;<br>/**</p>
+<ul>
+<li>Jdbc讲解</li>
+<li>@author songxh</li>
+<li>/<br>/*</li>
+<li>Jdbc是一个中间件,通过Jdbc中间件，可以让java代码，访问数据库服务器</li>
+<li>注意：与Jdbc操作相关的一系列类，jdk中有的有，有的没有，没有的就需要导入jar包</li>
+<li>/<br>public class JdbcStu {<br>  static Statement st = null;<br>  static Connection conn = null;<br>  //PreparedStatement是Statement的子类，<br>  //由于PreparedStatement能对<br>  //sql语句进行预编译，提高了执行效率<br>  static PreparedStatement ps = null;<br>  //结果集<br>  static ResultSet rs = null;<br>  /**<ul>
+<li>@param args</li>
+<li>/<br>public static void main(String[] args) {<br>  //basicStu();<br>  //deleteStu();<br>  insertStu1();<br>  selectStu();<br>}<br>/**</li>
+<li>jdbc基本操作</li>
+<li>/<br>public static void basicStu() {<br>  String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>  String username=”root”;<br>  String password=”zy19991030”;<br>  Statement st = null;<br>  Connection conn = null;<br>  try {<pre><code>//1、加载驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+//2、连接数据库服务器
+ conn=DriverManager.getConnection(url,username,password);
+System.out.println(conn);
+//3、获得陈述对象
+ st = conn.createStatement();
+String sql=&quot;insert into course(cnam,tid) values(&apos;jspservlet&apos;,3)&quot;;
+//执行sql语句
+st.executeUpdate(sql);</code></pre>  } catch (Exception e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>if(st!=null){
+    try {
+        st.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}</code></pre>  }<br>  if(conn!=null){<pre><code>try {
+    conn.close();
+} catch (SQLException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}</code></pre>  }<br>}<br>/**</li>
+<li>查询</li>
+<li>/<br>public static void selectStu(){<br>  String url=”jdbc:mysql://127.0.0.1:3306/schooldb”;<br>  String username=”root”;<br>  String password=”zy19991030”;<br>  Statement st = null;<br>  Connection conn = null;<br>  ResultSet rs = null;<br>  //结果集<br>  try {<pre><code>//1、加载驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+//2、连接数据库服务器
+ conn=DriverManager.getConnection(url,username,password);
+System.out.println(conn);
+//3、获得陈述对象
+ st = conn.createStatement();
+String sql=&quot;select coid,cnam,tid from course&quot;;
+//执行sql语句
+rs = st.executeQuery(sql);
+//处理结果集
+while(rs!=null&amp;&amp;rs.next()){
+    System.out.println(rs.getInt(&quot;coid&quot;)+&quot; &quot;+rs.getString(&quot;cnam&quot;)+&quot; &quot;+rs.getInt(&quot;tid&quot;));
+}</code></pre>  } catch (Exception e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>if(rs!=null){
+    try {
+        rs.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+if(st!=null){
+    try {
+        st.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}
+if(conn!=null){
+    try {
+        conn.close();
+    } catch (SQLException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}</code></pre>  }<br>}<br>/**</li>
+<li>删除</li>
+<li>/<br>public static void deleteStu(){<br>  conn = JdbcUtil.getConnection();<br>  try {<pre><code>st = conn.createStatement();
+String sql=&quot;delete from course where coid=2&quot;;
+st.executeUpdate(sql);</code></pre>  } catch (SQLException e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>JdbcUtil.realse(conn, st, rs);</code></pre>  }<br>}<br>public static void insertStu1(){<br>  conn = JdbcUtil.getConnection();<br>  //由于要对sql语句进行预编译时，不能有具体的数据。先用？占住位置。<br>  //？就称为占位符<br>  String sql=”insert into course(cnam,tid) values(?,?)”;<br>  try {<pre><code>//创建陈述对象的同时完成对sql语句的编译
+ps = conn.prepareStatement(sql);
+//给？传值
+ps.setString(1,&quot;ssm框架&quot;);
+ps.setInt(2,3);
+//执行sql语句
+ps.executeUpdate();</code></pre>  } catch (SQLException e) {<pre><code>// TODO Auto-generated catch block
+e.printStackTrace();</code></pre>  }finally{<pre><code>JdbcUtil.realse(conn, ps, rs);</code></pre>  }<br>}<br>}</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -256,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/24/JdbcUtil类/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/24/JdbcStu类/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,18 +356,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/24/JdbcStu类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JdbcStu类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/20/MySQL第三节课/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MySQL第三节课</div>
+    <a href="/2019/10/24/JdbcUtil类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JdbcUtil类</div>
       <i class="icon-circle-right"></i>
     </a>
   
